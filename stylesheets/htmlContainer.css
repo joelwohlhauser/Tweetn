@@ -1,0 +1,179 @@
+/* --------- Body & HTML --------- */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  width: 100%;
+  margin-left: 0px;
+}
+
+/* Smartphones */
+@media only screen and (max-width: 749px) {
+  body {
+    background-color: white !important;
+  }
+}
+
+/* ------- Navbar ------- */
+
+* {
+  box-sizing: border-box;
+  outline: unset;
+}
+
+body {
+  margin: 0px;
+}
+
+.nav {
+  height: 50px;
+  position: fixed;
+  width: 100%;
+  background-color: #e5e5e5;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  z-index: 10;
+  top: 0;
+}
+
+
+/* Smartphones */
+@media only screen and (max-width: 749px) {
+	.nav {
+    padding-left: 0%;
+    padding-right: 0%;
+	}
+}
+
+/* Tablet */
+@media only screen and (min-width: 750px) {
+	.nav {
+    padding-left: 8%;
+    padding-right: 8%;
+	}
+}
+
+/* Desktop */
+@media only screen and (min-width: 1200px) {
+  .nav {
+    padding-left: 20%;
+    padding-right: 20%;
+	}
+}
+
+.nav > .nav-header {
+  display: inline;
+}
+
+.nav > .nav-header > .nav-title {
+  display: inline-block;
+  font-size: 22px;
+  color: black;
+  padding: 10px 10px 10px 10px;
+}
+
+.nav-Tweetn {
+  color: #162c3d;
+  text-decoration: none;
+}
+
+.nav > .nav-btn {
+  display: none;
+}
+
+.nav > .nav-links {
+  display: inline;
+  float: right;
+  font-size: 18px;
+}
+
+.nav > .nav-links > a {
+  display: inline-block;
+  padding: 13px 10px 13px 10px;
+  text-decoration: none;
+  color: #162c3d;
+}
+
+.nav > .nav-links > a:hover {
+  text-decoration: underline;
+}
+
+.nav > #nav-check {
+  display: none;
+}
+
+@media (max-width:749px) {
+  .nav > .nav-btn {
+    display: inline-block;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+  }
+  .nav > .nav-btn > label {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    padding-left: 8px;
+    padding-top: 5px;
+  }
+  .nav > .nav-btn > label:hover {
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+  .nav > .nav-btn > label > span {
+    display: block;
+    width: 25px;
+    height: 10px;
+    border-top: 2px solid black;
+  }
+  .nav > .nav-links {
+    position: absolute;
+    display: block;
+    width: 100%;
+    background-color: #dbdbdb;
+    height: 0px;
+    transition: all 0.3s ease-in;
+    overflow-y: hidden;
+    top: 50px;
+    left: 0px;
+  }
+  .nav > .nav-links > a {
+    display: block;
+    width: 100%;
+  }
+  .nav > #nav-check:not(:checked) + .nav-links {
+    height: 0px;
+  }
+  .nav > #nav-check:checked + .nav-links {
+    height: calc(100vh - 50px);
+    overflow-y: auto;
+  }
+}
+
+
+/* Burger Icon */
+
+.container {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.bar1, .bar2, .bar3 {
+  width: 35px;
+  height: 5px;
+  background-color: #333;
+  margin: 6px 0;
+  transition: 0.4s;
+}
+
+.change .bar1 {
+  -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+  transform: rotate(-45deg) translate(-9px, 6px);
+}
+
+.change .bar2 {opacity: 0;}
+
+.change .bar3 {
+  -webkit-transform: rotate(45deg) translate(-8px, -8px);
+  transform: rotate(45deg) translate(-8px, -8px);
+}

@@ -1,0 +1,120 @@
+.timelineContainer {
+  background-color: white;
+  position: relative;
+  width: 100%;
+  height: auto;
+  z-index: -1;
+  margin-top: 100px;
+}
+
+
+
+
+
+
+/* ----------- Timeline ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-style: italic;
+  opacity: .75;
+  margin-bottom: 1rem;
+}
+
+/* The main page layout is divided into 4 columns that grow and shrink with the viewport width. */
+.container-main {
+  height: auto;
+  width: 95%;
+  display: grid;
+  position: relative;
+  overflow: hidden;
+  padding-top: 70px;
+  grid-template-columns:
+    minmax(1em, 1fr)
+    1fr
+    minmax(min-content, 65ch)
+    minmax(1em, 1fr);
+  grid-auto-flow: column;
+}
+
+/* Timeline decoration (bullets+line) fills 2nd column of main page layout. */
+.container-bullets {
+  grid-column: 2 / 3;
+  height: 100%;
+  display: grid;
+  justify-items: center;
+  align-items: start;
+  grid-template-columns: 1fr minmax(1em, 1em) 1fr; /* controls size of bullets (using em unit allows bullets to resize proportionately with font size)*/
+}
+
+/* Bullets align with the top of their containers, so they should line up with the top of each element that has class "container-content". */
+.bullet {
+  grid-column: 2 / 3;
+  grid-row: 1;
+  width: 100%;
+  padding-bottom: 100%;
+  background-color: #2a577a;
+  border-radius: 50%;
+  z-index: 2;
+  margin-top: 15px;
+}
+
+.vertical-line {
+  grid-column: 2 / 3;
+  grid-row: 1;
+  height: 100%;
+  width: 2px;
+  background-color: black;
+  z-index: 1;
+  margin-top: 15px;
+}
+
+.vertical-line:nth-child(even) {
+  grid-column: 2 / 3;
+  grid-row: 1;
+  height: 999999px;
+  width: 2px;
+  background-color: black;
+  z-index: 1;
+  margin-top: 15px;
+  position: fixed;
+}
+
+/* Timeline content (text) fills 3rd column of the main page layout. */
+.container-content {
+  grid-column: 3 / 4;
+  margin: 0 0 3rem 2rem;
+  background-color: #efefef;
+  border-radius: 20px;
+  box-shadow: 0 0px 0px 0 #efefef, 0 0px 15px 0 #efefef;
+  padding: 15px;
+}
+
+.timeline-username {
+  font-weight: bold;
+  font-size: 90%;
+}
+
+.timeline-content {
+  margin-top: 10px;
+  font-size: 120%;
+}
+
+.timeline-time {
+  font-size: 90%;
+  margin-top: 10px;
+  color: grey;
+  float: right;
+}
